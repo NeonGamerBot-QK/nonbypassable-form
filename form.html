@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Done</title>
+<link rel="stylesheet" href="js/styles.css">
+</head>
+<body>
+  <h1>Congrats</h1>  
+    <p>
+       You did the form, below is all the data i got from it:
+       <pre id="data"></pre>
+        if you want to do it again here is the fresh <a href="index.html">link</a>
+    </p>
+    <script>
+        const el = document.querySelector('pre')
+        el.innerText = JSON.stringify(JSON.parse('{"' + decodeURI(location.search.replace(/&/g, "\",\"").replace(/=/g,"\":\"")) + '"}'),null,4)
+    </script>
+</body>
+</html>

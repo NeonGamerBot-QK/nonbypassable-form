@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blocked</title>
+<link rel="stylesheet" href="js/styles.css">
+</head>
+<body>
+  <h1>You got caught</h1>  
+    <p>
+        one of the reasons you were sent here was:
+        <ul>
+            <li>
+                Clicking any keys such as CTRL, ALT, META KEY (Windows Key, Search Key, Cmd key) 
+            </li>
+            <li>Exiting fullscreen</li>
+            <li>Opening Console</li>
+            <li>Trying to ALT tab or went out of window focus</li>
+            <li>External JS was found being executed</li>
+        </ul>
+        if you want to try to do it again here is the fresh <a href="index.html">link</a>
+    </p>
+    <script>
+        // bold element which was hiligheed
+        console.log(`Script`)
+const params =         JSON.parse('{"' + decodeURI(location.search.replace(/&/g, "\",\"").replace(/=/g,"\":\"")) + '"}')
+console.log(params) 
+if(params["?b"] && !isNaN(params["?b"])) {
+        let index = parseInt(params["?b"])
+  let el =       document.querySelector('ul').children[index]
+  if(el) {
+    el.style.color = "red"
+  } else {
+    console.log(`No el`)
+  }
+    }
+    </script>
+</body>
+</html>
